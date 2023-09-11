@@ -44,6 +44,7 @@ const ToolTipBox = styled.div`
   padding: 15px;
   border-radius: 10px;
   background-color: white;
+  box-shadow: rgba(0, 0, 0, 0.04) 0px 4px 16px 0px;
 `;
 
 const ValueBar = styled.div`
