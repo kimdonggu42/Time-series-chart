@@ -12,6 +12,7 @@ import {
   Cell,
   ResponsiveContainer,
 } from "recharts";
+import CustomTooltip from "./components/CustomTooltip";
 
 interface MockData {
   id: string;
@@ -51,19 +52,20 @@ export default function App() {
             orientation='left'
             label={{ value: "Area", angle: -90, position: "insideLeft" }}
           />
-          <Tooltip />
+          <Tooltip content={<CustomTooltip />} />
+
           <Legend />
           <Bar dataKey='value_bar' fill='#7876ce' onClick={(data) => setDistrict(data.id)}>
             {resData.map((entry) => (
-              <Cell fill={entry.id === district ? "#5250d1" : "#7876ce"} key={entry.id} />
+              <Cell fill={entry.id === district ? "#5741bf" : "#9ea0fe"} key={entry.id} />
             ))}
           </Bar>
           <Area
             yAxisId='area'
             type='monotone'
             dataKey='value_area'
-            fill='#da5d5d'
-            stroke='#da5d5d'
+            fill='#f98e8e'
+            stroke='#f98e8e'
           />
         </ComposedChart>
       </ResponsiveContainer>
